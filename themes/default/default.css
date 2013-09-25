@@ -91,3 +91,8 @@ Supports Thumbs: true
 	width: 120px;
 	height: auto;
 }
+
+.theme-default .slide-thumbs-left{left: 0;background: #000 url('sx.png') 15px 35px no-repeat;}
+.theme-default .slide-thumbs-right{left: 905px;background: #000 url('dx.png') 15px 35px no-repeat;}
+.theme-default .thumbs-linguetta-up{background:#000 url('up.png') center 5px no-repeat; border:1px solid #ccc; border-bottom: 0;}
+.theme-default .thumbs-linguetta-down{background: #000 url('dw.png') center 5px no-repeat;border:1px solid #ccc; border-bottom: 0;}

@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <html lang="en">
 <head>
-    <title>Nivo Slider Demo</title>
+    <title>Nivo Slider - Muvobit Version - Demo</title>
     <link rel="stylesheet" href="../themes/default/default.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../themes/light/light.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../themes/dark/dark.css" type="text/css" media="screen" />
@@ -11,27 +11,55 @@
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 </head>
 <body>
+    <div class='info'>
+    <h1>Nivoslider - Muvobit Version</h1>
+        <p>
+            Nivoslider Muvobit Version adds 2 main features:
+            <ul>
+                <li>Thumbs navigation show/hide controll</li>
+                <li>Touch (swipe left/right) navigation</li>
+            </ul>
+        </p>
+    </div>
     <div id="wrapper">
-        <a href="http://dev7studios.com" id="dev7link" title="Go to dev7studios">dev7studios</a>
-
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
                 <img src="images/toystory.jpg" data-thumb="images/toystory.jpg" alt="" />
-                <a href="http://dev7studios.com"><img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
+                <a href="http://muvobit.com"><img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
                 <img src="images/walle.jpg" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" />
                 <img src="images/nemo.jpg" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />
             </div>
             <div id="htmlcaption" class="nivo-html-caption">
-                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.ciaociaocaisascacasca ca scac asc ascasc ascac ciaociaocaisascacasca ca scac asc ascasc ascac <br>
+                ciaociaocaisascacasca ca scac asc ascasc ascac ciaociaocaisascacasca ca scac asc ascasc ascac ciaociaocaisascacasca ca scac asc ascasc ascac<br>
             </div>
         </div>
 
     </div>
     <script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="scripts/modernizr.custom.only-touch-events.js"></script>
+    <script type="text/javascript" src="scripts/jquery.mobile.min.js"></script>
+    
     <script type="text/javascript" src="../jquery.nivo.slider.js"></script>
+    <!--<script type="text/javascript" src="scripts/jquery.nivo.original.slider.js"></script>-->
     <script type="text/javascript">
     $(window).load(function() {
-        $('#slider').nivoSlider();
+        if(!Modernizr.touch){
+            // Standard
+            $('#slider').nivoSlider({
+              controlNavThumbs:true
+            });
+        } else{
+            // Touch optimized version
+            $('#slider').nivoSlider({
+              controlNavThumbs : false,
+              manualAdvance : true,
+              slices : 1,
+              animSpeed : 500,
+              boxCols : 1,
+              boxRows : 1
+            });
+        }
     });
     </script>
 </body>
